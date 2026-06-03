@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,39 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         /* CSS Custom Variables - Professional Teal & Navy Palette */
         :root {
-            --primary: #007A87; /* Deep Medical Teal */
+            --primary: #007A87;
+            /* Deep Medical Teal */
             --primary-dark: #005F6A;
             --primary-light: #E0F2F1;
-            --secondary: #1F3B4D; /* Navy Slate */
+            --secondary: #1F3B4D;
+            /* Navy Slate */
             --secondary-dark: #12222E;
-            --accent: #E53E3E; /* Soft Coral Red */
-            
-            --bg-color: #F8FAFC; /* Slate 50 */
+            --accent: #E53E3E;
+            /* Soft Coral Red */
+
+            --bg-color: #F8FAFC;
+            /* Slate 50 */
             --card-bg: #FFFFFF;
-            --border-color: #E2E8F0; /* Slate 200 */
-            --text-color: #334155; /* Slate 700 */
-            --text-light: #64748B; /* Slate 500 */
-            
+            --border-color: #E2E8F0;
+            /* Slate 200 */
+            --text-color: #334155;
+            /* Slate 700 */
+            --text-light: #64748B;
+            /* Slate 500 */
+
             --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 10px 25px -5px rgba(0, 74, 82, 0.08), 0 8px 16px -6px rgba(0, 74, 82, 0.05);
-            
+
             --font-main: 'Outfit', sans-serif;
             --font-headings: 'Plus Jakarta Sans', sans-serif;
             --transition-speed: 0.3s;
@@ -39,12 +49,17 @@
 
         /* Dark Theme Variables */
         body.dark {
-            --bg-color: #0B0F19; /* Slate 950 */
-            --card-bg: #151F32; /* Slate 900 */
+            --bg-color: #0B0F19;
+            /* Slate 950 */
+            --card-bg: #151F32;
+            /* Slate 900 */
             --border-color: #243249;
-            --text-color: #E2E8F0; /* Slate 200 */
-            --text-light: #94A3B8; /* Slate 400 */
-            --secondary: #38BDF8; /* Sky Blue */
+            --text-color: #E2E8F0;
+            /* Slate 200 */
+            --text-light: #94A3B8;
+            /* Slate 400 */
+            --secondary: #38BDF8;
+            /* Sky Blue */
             --secondary-dark: #0EA5E9;
             --primary-light: #0D2C34;
             --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
@@ -72,13 +87,19 @@
             padding: 0 1.5rem;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-headings);
             color: var(--secondary);
             font-weight: 700;
         }
 
-        body.dark h1, body.dark h2, body.dark h3, body.dark h4 {
+        body.dark h1,
+        body.dark h2,
+        body.dark h3,
+        body.dark h4 {
             color: #FFFFFF;
         }
 
@@ -130,7 +151,7 @@
             background-color: var(--secondary-dark);
             box-shadow: 0 4px 14px rgba(31, 59, 77, 0.3);
         }
-        
+
         body.dark .floating-btn.secondary {
             background-color: var(--primary);
             box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
@@ -156,7 +177,7 @@
             gap: 0.5rem;
             box-shadow: var(--shadow-sm);
         }
-        
+
         .print-tip button {
             background: rgba(255, 255, 255, 0.2);
             border: none;
@@ -236,7 +257,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         body.dark .header-content h1 {
             background: linear-gradient(90deg, #FFFFFF, var(--secondary));
             -webkit-background-clip: text;
@@ -380,7 +401,7 @@
             background-color: var(--primary-light);
             transform: translateY(-1px);
         }
-        
+
         body.dark .skill-tag:hover {
             background-color: var(--primary-light);
             color: #FFFFFF;
@@ -421,7 +442,8 @@
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             height: 100%;
             border-radius: 4px;
-            width: 0; /* Animated via JS */
+            width: 0;
+            /* Animated via JS */
             transition: width 1.2s cubic-bezier(0.1, 0.8, 0.3, 1);
         }
 
@@ -479,7 +501,7 @@
             margin-bottom: 1.25rem;
             text-align: justify;
         }
-        
+
         .profile-summary-text strong {
             color: var(--primary);
         }
@@ -630,7 +652,8 @@
         }
 
         .job-bullets li::before {
-            content: "\f00c"; /* check icon */
+            content: "\f00c";
+            /* check icon */
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             position: absolute;
@@ -711,15 +734,18 @@
             .cv-grid {
                 grid-template-columns: 1fr;
             }
+
             .cv-header {
                 flex-direction: column;
                 text-align: center;
                 padding: 2rem;
                 gap: 1.5rem;
             }
+
             .cv-header::before {
                 display: none;
             }
+
             .contact-grid {
                 justify-items: center;
             }
@@ -729,25 +755,31 @@
             body {
                 padding: 1rem 0;
             }
+
             .cv-card {
                 padding: 1.5rem;
             }
+
             .timeline {
                 padding-left: 1.5rem;
             }
+
             .timeline::before {
                 left: 3px;
             }
+
             .timeline-dot {
                 left: -1.5rem;
                 top: 8px;
                 width: 10px;
                 height: 10px;
             }
+
             .job-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .job-date {
                 margin-top: 0.25rem;
             }
@@ -765,7 +797,8 @@
             /* Global resets for high-quality laser print */
             body {
                 background-color: #FFFFFF !important;
-                color: #1E293B !important; /* Slate 800 for high readability print */
+                color: #1E293B !important;
+                /* Slate 800 for high readability print */
                 font-size: 9pt;
                 line-height: 1.35;
                 padding: 0 !important;
@@ -904,7 +937,7 @@
                 margin-bottom: 0.35rem !important;
                 gap: 0.5rem !important;
             }
-            
+
             .cert-item i {
                 font-size: 8pt !important;
                 margin-top: 0.1rem !important;
@@ -963,7 +996,8 @@
 
             .timeline::before,
             .timeline-dot {
-                display: none !important; /* Hide dot and line in print to save space */
+                display: none !important;
+                /* Hide dot and line in print to save space */
             }
 
             .timeline-item {
@@ -1043,7 +1077,9 @@
             }
 
             /* Explicit Page Break Controls to avoid splitting elements */
-            h2, h3, .card-title {
+            h2,
+            h3,
+            .card-title {
                 page-break-after: avoid !important;
             }
 
@@ -1051,7 +1087,7 @@
             .cv-card {
                 page-break-inside: auto !important;
             }
-            
+
             /* Explicit Page Break on Experience boundaries for perfect 2-page fit */
             .page-break-before {
                 page-break-before: always !important;
@@ -1059,32 +1095,35 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <!-- Interactive Tip (Hidden in PDF) -->
         <div class="print-tip" id="printTip">
-            <span><i class="fa-solid fa-circle-info"></i> Esta es la versión <strong>Pro sin solapas</strong> de tu CV, diseñada para visualizarse continua y optimizada para guardarse a PDF.</span>
+            <span><i class="fa-solid fa-circle-info"></i> Esta es la versión <strong>Pro sin solapas</strong> de tu CV,
+                diseñada para visualizarse continua y optimizada para guardarse a PDF.</span>
             <button onclick="dismissTip()">Entendido</button>
         </div>
 
         <!-- HEADER -->
         <header class="cv-header">
             <div class="profile-wrapper">
-                <img src="./avatar.jpg" alt="Lic. Leonardo Andrés Lucero" class="profile-img" onerror="this.src='./Lucero.jpg';">
+                <img src="./avatar.jpg" alt="Lic. Leonardo Andrés Lucero" class="profile-img"
+                    onerror="this.src='./Lucero.jpg';">
             </div>
             <div class="header-content">
                 <h1>Lic. Leonardo Andrés Lucero</h1>
                 <div class="subtitle">Líder de Desarrollo Web & Sistemas de Información en Salud</div>
-                
+
                 <div class="contact-grid">
                     <a href="mailto:leoandreslucero@gmail.com" class="contact-link">
                         <i class="fa-solid fa-envelope"></i>
                         <span>leoandreslucero@gmail.com</span>
                     </a>
-                    <a href="tel:+5491155551234" class="contact-link">
+                    <a href="tel:+5491162755454class=" contact-link">
                         <i class="fa-solid fa-phone"></i>
-                        <span>+54 9 11 5555-1234</span>
+                        <span>+54 9 11 6275-5454</span>
                     </a>
                     <div class="contact-link">
                         <i class="fa-solid fa-location-dot"></i>
@@ -1094,13 +1133,13 @@
                         <i class="fa-solid fa-id-card"></i>
                         <span>DNI: 31.098.540</span>
                     </div>
-                    <a href="https://linkedin.com/in/leolucero" target="_blank" class="contact-link">
+                    <a href="https://linkedin.com/in/all-leonardo-lucero" target="_blank" class="contact-link">
                         <i class="fa-brands fa-linkedin"></i>
-                        <span>linkedin.com/in/leolucero</span>
+                        <span>linkedin.com/in/all-leonardo-lucero</span>
                     </a>
-                    <a href="https://github.com/leolucero" target="_blank" class="contact-link">
+                    <a href="https://dev-all.github.io/gitpage/" target="_blank" class="contact-link">
                         <i class="fa-brands fa-github"></i>
-                        <span>github.com/leolucero</span>
+                        <span>https://dev-all.github.io/gitpage/</span>
                     </a>
                 </div>
             </div>
@@ -1108,14 +1147,14 @@
 
         <!-- MAIN LAYOUT GRID -->
         <div class="cv-grid">
-            
+
             <!-- LEFT COLUMN (Sidebar) -->
             <aside class="sidebar">
-                
+
                 <!-- SKILLS -->
                 <section class="cv-card">
                     <h3 class="card-title"><i class="fa-solid fa-laptop-code"></i> Competencias</h3>
-                    
+
                     <div class="skill-group">
                         <h4><i class="fa-solid fa-code"></i> Frontend & Backend</h4>
                         <div class="badges-wrapper">
@@ -1247,18 +1286,27 @@
 
             <!-- RIGHT COLUMN (Main Pane) -->
             <main class="main-pane">
-                
+
                 <!-- PROFILE SUMMARY -->
                 <section class="cv-card">
                     <h3 class="card-title"><i class="fa-solid fa-circle-info"></i> Perfil Profesional</h3>
                     <p class="profile-summary-text">
-                        Licenciado en Informática con más de 15 años de trayectoria en el diseño, desarrollo e implementación de sistemas de información complejos, con especialidad en el sector de salud pública, emergencias y seguridad. 
+                        Licenciado en Informática con más de 15 años de trayectoria en el diseño, desarrollo e
+                        implementación de sistemas de información complejos, con especialidad en el sector de salud
+                        pública, emergencias y seguridad.
                     </p>
                     <p class="profile-summary-text">
-                        He liderado equipos de desarrollo en la construcción de aplicaciones web escalables y en la administración de infraestructuras críticas de bases de datos bajo SQL Server. Cuento con una sólida experiencia integrando <strong>sistemas hospitalarios (HIS) de alta complejidad homologados bajo los estándares del Hospital Italiano</strong>, administrando la seguridad de los datos según normativas ISO 27001 y desarrollando capas web seguras orientadas a la optimización de procesos y a la protección de datos médicos sensibles.
+                        He liderado equipos de desarrollo en la construcción de aplicaciones web escalables y en la
+                        administración de infraestructuras críticas de bases de datos bajo SQL Server. Cuento con una
+                        sólida experiencia integrando <strong>sistemas hospitalarios (HIS) de alta complejidad
+                            homologados bajo los estándares del Hospital Italiano</strong>, administrando la seguridad
+                        de los datos según normativas ISO 27001 y desarrollando capas web seguras orientadas a la
+                        optimización de procesos y a la protección de datos médicos sensibles.
                     </p>
                     <p class="profile-summary-text">
-                        Mi sólida base militar como Oficial de Comunicaciones me ha dotado de destrezas de liderazgo bajo presión, estructuración eficiente de proyectos, adaptabilidad, ética profesional y compromiso inquebrantable para lograr objetivos institucionales y empresariales.
+                        Mi sólida base militar como Oficial de Comunicaciones me ha dotado de destrezas de liderazgo
+                        bajo presión, estructuración eficiente de proyectos, adaptabilidad, ética profesional y
+                        compromiso inquebrantable para lograr objetivos institucionales y empresariales.
                     </p>
 
                     <!-- Why Medicus Highlights -->
@@ -1285,23 +1333,34 @@
                 <section class="cv-card">
                     <h3 class="card-title"><i class="fa-solid fa-briefcase"></i> Trayectoria Profesional</h3>
                     <div class="timeline">
-                        
+
                         <!-- JOB 1 -->
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-header">
                                 <div>
-                                    <h4 class="job-role">Líder de Sistemas de Información e Infraestructura de Software</h4>
-                                    <span class="job-company">Gendarmería Nacional Argentina - Centro Asistencial "Buenos Aires"</span>
+                                    <h4 class="job-role">Líder de Sistemas de Información e Infraestructura de Software
+                                    </h4>
+                                    <span class="job-company">Gendarmería Nacional Argentina - Centro Asistencial
+                                        "Buenos Aires"</span>
                                 </div>
                                 <span class="job-date">2022 - Presente</span>
                             </div>
-                            <p class="job-summary">Coordinación del departamento tecnológico del Centro Asistencial, administrando la infraestructura y el desarrollo de sistemas médicos sanitarios.</p>
+                            <p class="job-summary">Coordinación del departamento tecnológico del Centro Asistencial,
+                                administrando la infraestructura y el desarrollo de sistemas médicos sanitarios.</p>
                             <ul class="job-bullets">
-                                <li>Liderazgo en desarrollo e implementación del portal web y aplicaciones sanitarias internas, disminuyendo en un 30% los tiempos administrativos de asignación de turnos.</li>
-                                <li>Gestión de la interoperabilidad sanitaria certificando y homologando sistemas de información bajo lineamientos del <strong>Hospital Italiano de Buenos Aires (2023 - 2025)</strong>.</li>
-                                <li>Despliegue del Sistema de Gestión de Seguridad de la Información (SGSI) bajo norma <strong>ISO/IEC 27001</strong> para blindar el acceso a historias clínicas según Ley 25.326.</li>
-                                <li>Integración y desarrollo de módulos geográficos (GIS) con tecnología <strong>Aeroterra/Esri</strong> para logística sanitaria y respuesta ante emergencias.</li>
+                                <li>Liderazgo en desarrollo e implementación del portal web y aplicaciones sanitarias
+                                    internas, disminuyendo en un 30% los tiempos administrativos de asignación de
+                                    turnos.</li>
+                                <li>Gestión de la interoperabilidad sanitaria certificando y homologando sistemas de
+                                    información bajo lineamientos del <strong>Hospital Italiano de Buenos Aires (2023 -
+                                        2025)</strong>.</li>
+                                <li>Despliegue del Sistema de Gestión de Seguridad de la Información (SGSI) bajo norma
+                                    <strong>ISO/IEC 27001</strong> para blindar el acceso a historias clínicas según Ley
+                                    25.326.</li>
+                                <li>Integración y desarrollo de módulos geográficos (GIS) con tecnología
+                                    <strong>Aeroterra/Esri</strong> para logística sanitaria y respuesta ante
+                                    emergencias.</li>
                             </ul>
                         </div>
 
@@ -1311,16 +1370,22 @@
                             <div class="timeline-header">
                                 <div>
                                     <h4 class="job-role">Líder Técnico de Desarrollo Web / Analista de Sistemas</h4>
-                                    <span class="job-company">Gendarmería Nacional Argentina - Dirección de Informática (DIRTICOM)</span>
+                                    <span class="job-company">Gendarmería Nacional Argentina - Dirección de Informática
+                                        (DIRTICOM)</span>
                                 </div>
                                 <span class="job-date">2015 - 2022</span>
                             </div>
-                            <p class="job-summary">Líder de desarrollo frontend/backend y administrador de servidores de bases de datos relacionales institucionales.</p>
+                            <p class="job-summary">Líder de desarrollo frontend/backend y administrador de servidores de
+                                bases de datos relacionales institucionales.</p>
                             <ul class="job-bullets">
-                                <li>Administración técnica y diseño de bases de datos críticas estructuradas bajo <strong>Microsoft SQL Server 2012</strong>, garantizando alta disponibilidad.</li>
-                                <li>Programación full-stack de portales internos y servicios interactivos seguros con JavaScript (ES6+), Python, Node.js y APIs REST.</li>
-                                <li>Supervisión de metodologías de código seguro y auditorías de seguridad en sistemas web institucionales.</li>
-                                <li>Integración de sistemas y desarrollo del soporte de base de datos durante el Congreso Odontológico Institucional (2019).</li>
+                                <li>Administración técnica y diseño de bases de datos críticas estructuradas bajo
+                                    <strong>Microsoft SQL Server 2012</strong>, garantizando alta disponibilidad.</li>
+                                <li>Programación full-stack de portales internos y servicios interactivos seguros con
+                                    JavaScript (ES6+), Python, Node.js y APIs REST.</li>
+                                <li>Supervisión de metodologías de código seguro y auditorías de seguridad en sistemas
+                                    web institucionales.</li>
+                                <li>Integración de sistemas y desarrollo del soporte de base de datos durante el
+                                    Congreso Odontológico Institucional (2019).</li>
                             </ul>
                         </div>
 
@@ -1330,15 +1395,20 @@
                             <div class="timeline-header">
                                 <div>
                                     <h4 class="job-role">Desarrollador Web / Analista Programador</h4>
-                                    <span class="job-company">Gendarmería Nacional Argentina - Dirección de Comunicaciones (DIRTICOM)</span>
+                                    <span class="job-company">Gendarmería Nacional Argentina - Dirección de
+                                        Comunicaciones (DIRTICOM)</span>
                                 </div>
                                 <span class="job-date">2009 - 2015</span>
                             </div>
-                            <p class="job-summary">Análisis de requerimientos, codificación y mantenimiento preventivo de portales e intranet de la fuerza.</p>
+                            <p class="job-summary">Análisis de requerimientos, codificación y mantenimiento preventivo
+                                de portales e intranet de la fuerza.</p>
                             <ul class="job-bullets">
-                                <li>Codificación y mantenimiento de aplicaciones web internas con tecnologías HTML, CSS, JavaScript y PHP.</li>
-                                <li>Desarrollo de stored procedures complejos y optimización de índices SQL Server para la generación acelerada de reportes estadísticos.</li>
-                                <li>Miembro del equipo de soporte informático de comunicaciones en el Congreso de Comunicaciones e Informática (2010).</li>
+                                <li>Codificación y mantenimiento de aplicaciones web internas con tecnologías HTML, CSS,
+                                    JavaScript y PHP.</li>
+                                <li>Desarrollo de stored procedures complejos y optimización de índices SQL Server para
+                                    la generación acelerada de reportes estadísticos.</li>
+                                <li>Miembro del equipo de soporte informático de comunicaciones en el Congreso de
+                                    Comunicaciones e Informática (2010).</li>
                             </ul>
                         </div>
 
@@ -1349,7 +1419,7 @@
                 <section class="cv-card">
                     <h3 class="card-title"><i class="fa-solid fa-graduation-cap"></i> Formación Académica</h3>
                     <div class="edu-list">
-                        
+
                         <div class="edu-item">
                             <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
                             <div class="edu-details">
@@ -1386,7 +1456,8 @@
 
         <!-- FOOTER (Hidden on Print) -->
         <footer class="cv-footer">
-            <p>Curriculum Vitae Profesional de Leonardo Andrés Lucero. Optimizado para visualización continua e impresión digital.</p>
+            <p>Curriculum Vitae Profesional de Leonardo Andrés Lucero. Optimizado para visualización continua e
+                impresión digital.</p>
             <p>© 2026 - CABA, Argentina.</p>
         </footer>
 
@@ -1455,4 +1526,5 @@
         });
     </script>
 </body>
+
 </html>
