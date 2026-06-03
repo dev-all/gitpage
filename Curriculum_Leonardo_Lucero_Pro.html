@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Profesional - Leonardo Andrés Lucero - Líder de Desarrollo Web</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Custom Variables - Professional Teal & Navy Palette */
+        :root {
+            --primary: #007A87; /* Deep Medical Teal */
+            --primary-dark: #005F6A;
+            --primary-light: #E0F2F1;
+            --secondary: #1F3B4D; /* Navy Slate */
+            --secondary-dark: #12222E;
+            --accent: #E53E3E; /* Soft Coral Red */
+            
+            --bg-color: #F8FAFC; /* Slate 50 */
+            --card-bg: #FFFFFF;
+            --border-color: #E2E8F0; /* Slate 200 */
+            --text-color: #334155; /* Slate 700 */
+            --text-light: #64748B; /* Slate 500 */
+            
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 74, 82, 0.08), 0 8px 16px -6px rgba(0, 74, 82, 0.05);
+            
+            --font-main: 'Outfit', sans-serif;
+            --font-headings: 'Plus Jakarta Sans', sans-serif;
+            --transition-speed: 0.3s;
+            --border-radius: 16px;
+        }
+
+        /* Dark Theme Variables */
+        body.dark {
+            --bg-color: #0B0F19; /* Slate 950 */
+            --card-bg: #151F32; /* Slate 900 */
+            --border-color: #243249;
+            --text-color: #E2E8F0; /* Slate 200 */
+            --text-light: #94A3B8; /* Slate 400 */
+            --secondary: #38BDF8; /* Sky Blue */
+            --secondary-dark: #0EA5E9;
+            --primary-light: #0D2C34;
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-headings);
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        body.dark h1, body.dark h2, body.dark h3, body.dark h4 {
+            color: #FFFFFF;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Floating Utility Controls (Hide on Print) */
+        .controls-bar {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            z-index: 1000;
+        }
+
+        .floating-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 122, 135, 0.3);
+            transition: all var(--transition-speed);
+            font-size: 1.25rem;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            background-color: var(--primary-dark);
+            box-shadow: 0 6px 20px rgba(0, 122, 135, 0.4);
+        }
+
+        .floating-btn.secondary {
+            background-color: var(--secondary-dark);
+            box-shadow: 0 4px 14px rgba(31, 59, 77, 0.3);
+        }
+        
+        body.dark .floating-btn.secondary {
+            background-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+
+        .floating-btn.secondary:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Top Notification Bar (Online viewing hint) */
+        .print-tip {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .print-tip button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            transition: background var(--transition-speed);
+        }
+
+        .print-tip button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* CV HEADER SECTION (Pro design, wide) */
+        .cv-header {
+            background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: background-color var(--transition-speed), border-color var(--transition-speed);
+        }
+
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-light);
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-speed);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+            border-color: var(--primary);
+        }
+
+        .header-content {
+            flex-grow: 1;
+            z-index: 2;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        body.dark .header-content h1 {
+            background: linear-gradient(90deg, #FFFFFF, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            font-family: var(--font-headings);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            transition: color var(--transition-speed);
+        }
+
+        .contact-link:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-link i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* 2-COLUMN MAIN CONTENT GRID */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 2rem;
+        }
+
+        /* SIDEBAR (LEFT) */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* MAIN CONTENT AREA (RIGHT) */
+        .main-pane {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* CARD STYLING */
+        .cv-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: background-color var(--transition-speed), border-color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .cv-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+
+        body.dark .card-title {
+            border-bottom-color: var(--border-color);
+        }
+
+        .card-title i {
+            color: var(--primary);
+        }
+
+        /* SKILLS COMPONENT */
+        .skill-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-group h4 i {
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .badges-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 0.4rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 550;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-speed);
+        }
+
+        .skill-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background-color: var(--primary-light);
+            transform: translateY(-1px);
+        }
+        
+        body.dark .skill-tag:hover {
+            background-color: var(--primary-light);
+            color: #FFFFFF;
+        }
+
+        /* LANGUAGES COMPONENT */
+        .language-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .language-item {
+            width: 100%;
+        }
+
+        .lang-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .lang-level {
+            color: var(--primary);
+        }
+
+        .progress-bar-bg {
+            background-color: var(--bg-color);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 100%;
+            border-radius: 4px;
+            width: 0; /* Animated via JS */
+            transition: width 1.2s cubic-bezier(0.1, 0.8, 0.3, 1);
+        }
+
+        /* CERTIFICATIONS (SIDEBAR COMPACT LIST) */
+        .certs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cert-item {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .cert-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .cert-item i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        .cert-details h5 {
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        .cert-details p {
+            color: var(--text-light);
+            font-size: 0.75rem;
+            margin-top: 0.1rem;
+        }
+
+        .cert-details .date {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 0.2rem;
+        }
+
+        /* PERFIL / SUMMARY */
+        .profile-summary-text {
+            font-size: 1.05rem;
+            color: var(--text-color);
+            margin-bottom: 1.25rem;
+            text-align: justify;
+        }
+        
+        .profile-summary-text strong {
+            color: var(--primary);
+        }
+
+        /* Fit Grid */
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .fit-box {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all var(--transition-speed);
+        }
+
+        .fit-box:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .fit-box i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .fit-box h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.35rem;
+            color: var(--secondary);
+        }
+
+        .fit-box p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* TIMELINE (WORK EXPERIENCE) */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.25rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2rem;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            border: 3px solid var(--primary);
+            z-index: 2;
+            transition: background-color var(--transition-speed);
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .job-role {
+            font-size: 1.15rem;
+            font-weight: 750;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        .job-company {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: block;
+            margin-top: 0.15rem;
+        }
+
+        .job-date {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        body.dark .job-date {
+            background-color: var(--border-color);
+            color: #FFFFFF;
+        }
+
+        .job-summary {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .job-bullets {
+            list-style-type: none;
+        }
+
+        .job-bullets li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.45rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .job-bullets li::before {
+            content: "\f00c"; /* check icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--primary);
+            font-size: 0.7rem;
+        }
+
+        /* EDUCATION STYLING */
+        .edu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .edu-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .edu-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary-light);
+            border-radius: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: all var(--transition-speed);
+        }
+
+        body.dark .edu-icon {
+            background-color: var(--border-color);
+        }
+
+        .edu-item:hover .edu-icon {
+            transform: scale(1.05);
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .edu-details h4 {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        .edu-school {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0.15rem 0;
+        }
+
+        .edu-meta {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+        .cv-footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 900px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+            .cv-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            .cv-header::before {
+                display: none;
+            }
+            .contact-grid {
+                justify-items: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0;
+            }
+            .cv-card {
+                padding: 1.5rem;
+            }
+            .timeline {
+                padding-left: 1.5rem;
+            }
+            .timeline::before {
+                left: 3px;
+            }
+            .timeline-dot {
+                left: -1.5rem;
+                top: 8px;
+                width: 10px;
+                height: 10px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .job-date {
+                margin-top: 0.25rem;
+            }
+        }
+
+        /* ==========================================================================
+           PRINT STYLESHEET (High-Fidelity PDF Export)
+           ========================================================================== */
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm 15mm 12mm 15mm;
+            }
+
+            /* Global resets for high-quality laser print */
+            body {
+                background-color: #FFFFFF !important;
+                color: #1E293B !important; /* Slate 800 for high readability print */
+                font-size: 9pt;
+                line-height: 1.35;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            /* Hide Web-only controls and elements */
+            .controls-bar,
+            .print-tip,
+            .cv-footer,
+            .edu-icon {
+                display: none !important;
+            }
+
+            /* Main grid structure for printing (Maintain columns, scaled for page width) */
+            .cv-grid {
+                display: grid !important;
+                grid-template-columns: 260px 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            /* CV Header Restyling for Print */
+            .cv-header {
+                background: none !important;
+                border: none !important;
+                border-bottom: 2px solid #0F172A !important;
+                border-radius: 0 !important;
+                padding: 0 0 1.25rem 0 !important;
+                margin-bottom: 1.25rem !important;
+                box-shadow: none !important;
+                gap: 1.5rem !important;
+            }
+
+            .cv-header::before {
+                display: none !important;
+            }
+
+            .profile-img {
+                width: 90px !important;
+                height: 90px !important;
+                border: 2px solid #007A87 !important;
+                box-shadow: none !important;
+            }
+
+            .header-content h1 {
+                font-size: 18pt !important;
+                background: none !important;
+                -webkit-text-fill-color: initial !important;
+                color: #1F3B4D !important;
+                margin-bottom: 0.15rem !important;
+            }
+
+            .header-content .subtitle {
+                font-size: 10pt !important;
+                margin-bottom: 0.5rem !important;
+                color: #007A87 !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 0.35rem !important;
+            }
+
+            .contact-link {
+                font-size: 7.5pt !important;
+                color: #334155 !important;
+            }
+
+            .contact-link i {
+                font-size: 8pt !important;
+                color: #007A87 !important;
+                width: 14px !important;
+            }
+
+            /* Card components styled flat for print */
+            .cv-card {
+                background: transparent !important;
+                border: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                margin-bottom: 1.25rem !important;
+                transform: none !important;
+            }
+
+            .card-title {
+                font-size: 10pt !important;
+                border-bottom: 1.5px solid #007A87 !important;
+                padding-bottom: 0.2rem !important;
+                margin-bottom: 0.75rem !important;
+                color: #1F3B4D !important;
+            }
+
+            .card-title i {
+                color: #007A87 !important;
+                font-size: 9pt !important;
+            }
+
+            /* Sidebar Print Optimizations */
+            .sidebar {
+                gap: 1.25rem !important;
+            }
+
+            .skill-group {
+                margin-bottom: 0.75rem !important;
+            }
+
+            .skill-group h4 {
+                font-size: 7.5pt !important;
+                margin-bottom: 0.35rem !important;
+                color: #1F3B4D !important;
+            }
+
+            .skill-tag {
+                background-color: #F1F5F9 !important;
+                color: #0F172A !important;
+                border: 1px solid #CBD5E1 !important;
+                padding: 0.15rem 0.4rem !important;
+                font-size: 7pt !important;
+                border-radius: 4px !important;
+            }
+
+            /* Certifications Print Optimizations */
+            .cert-item {
+                font-size: 7.5pt !important;
+                padding-bottom: 0.35rem !important;
+                margin-bottom: 0.35rem !important;
+                gap: 0.5rem !important;
+            }
+            
+            .cert-item i {
+                font-size: 8pt !important;
+                margin-top: 0.1rem !important;
+            }
+
+            .cert-details h5 {
+                font-size: 7.5pt !important;
+            }
+
+            .cert-details p {
+                font-size: 6.5pt !important;
+            }
+
+            .cert-details .date {
+                font-size: 6.5pt !important;
+                margin-top: 0.05rem !important;
+            }
+
+            /* Perfil Print Layout */
+            .profile-summary-text {
+                font-size: 8.5pt !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .fit-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 0.5rem !important;
+                margin-top: 0.75rem !important;
+            }
+
+            .fit-box {
+                padding: 0.5rem !important;
+                border-radius: 6px !important;
+                border: 1px solid #E2E8F0 !important;
+            }
+
+            .fit-box i {
+                font-size: 1.25rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .fit-box h4 {
+                font-size: 7.5pt !important;
+                margin-bottom: 0.15rem !important;
+            }
+
+            .fit-box p {
+                font-size: 6.5pt !important;
+            }
+
+            /* Timeline Print Layout */
+            .timeline {
+                padding-left: 0 !important;
+                margin-top: 0.5rem !important;
+            }
+
+            .timeline::before,
+            .timeline-dot {
+                display: none !important; /* Hide dot and line in print to save space */
+            }
+
+            .timeline-item {
+                margin-bottom: 1rem !important;
+                page-break-inside: avoid;
+            }
+
+            .timeline-header {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
+                margin-bottom: 0.25rem !important;
+                border-bottom: 0.5px dashed #CBD5E1 !important;
+                padding-bottom: 0.15rem !important;
+            }
+
+            .job-role {
+                font-size: 9pt !important;
+            }
+
+            .job-company {
+                font-size: 8pt !important;
+                margin-top: 0.05rem !important;
+            }
+
+            .job-date {
+                background: transparent !important;
+                border: 1px solid #1E293B !important;
+                color: #1E293B !important;
+                font-size: 6.5pt !important;
+                padding: 0.1rem 0.4rem !important;
+                font-weight: 700 !important;
+            }
+
+            .job-summary {
+                font-size: 8pt !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .job-bullets li {
+                font-size: 7.5pt !important;
+                padding-left: 0.75rem !important;
+                margin-bottom: 0.15rem !important;
+            }
+
+            .job-bullets li::before {
+                content: "•" !important;
+                font-family: inherit !important;
+                font-size: 9pt !important;
+                left: 0 !important;
+                top: -1px !important;
+                color: #007A87 !important;
+            }
+
+            /* Education Print Layout */
+            .edu-list {
+                gap: 0.75rem !important;
+            }
+
+            .edu-item {
+                gap: 0 !important;
+                page-break-inside: avoid;
+            }
+
+            .edu-details h4 {
+                font-size: 9pt !important;
+            }
+
+            .edu-school {
+                font-size: 8pt !important;
+                margin: 0.05rem 0 !important;
+            }
+
+            .edu-meta {
+                font-size: 7pt !important;
+            }
+
+            /* Explicit Page Break Controls to avoid splitting elements */
+            h2, h3, .card-title {
+                page-break-after: avoid !important;
+            }
+
+            /* Let cards break naturally, but keep individual items intact */
+            .cv-card {
+                page-break-inside: auto !important;
+            }
+            
+            /* Explicit Page Break on Experience boundaries for perfect 2-page fit */
+            .page-break-before {
+                page-break-before: always !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Interactive Tip (Hidden in PDF) -->
+        <div class="print-tip" id="printTip">
+            <span><i class="fa-solid fa-circle-info"></i> Esta es la versión <strong>Pro sin solapas</strong> de tu CV, diseñada para visualizarse continua y optimizada para guardarse a PDF.</span>
+            <button onclick="dismissTip()">Entendido</button>
+        </div>
+
+        <!-- HEADER -->
+        <header class="cv-header">
+            <div class="profile-wrapper">
+                <img src="./avatar.jpg" alt="Lic. Leonardo Andrés Lucero" class="profile-img" onerror="this.src='./Lucero.jpg';">
+            </div>
+            <div class="header-content">
+                <h1>Lic. Leonardo Andrés Lucero</h1>
+                <div class="subtitle">Líder de Desarrollo Web & Sistemas de Información en Salud</div>
+                
+                <div class="contact-grid">
+                    <a href="mailto:leoandreslucero@gmail.com" class="contact-link">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>leoandreslucero@gmail.com</span>
+                    </a>
+                    <a href="tel:+5491155551234" class="contact-link">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+54 9 11 5555-1234</span>
+                    </a>
+                    <div class="contact-link">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>CABA, Argentina</span>
+                    </div>
+                    <div class="contact-link">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>DNI: 31.098.540</span>
+                    </div>
+                    <a href="https://linkedin.com/in/leolucero" target="_blank" class="contact-link">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>linkedin.com/in/leolucero</span>
+                    </a>
+                    <a href="https://github.com/leolucero" target="_blank" class="contact-link">
+                        <i class="fa-brands fa-github"></i>
+                        <span>github.com/leolucero</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT GRID -->
+        <div class="cv-grid">
+            
+            <!-- LEFT COLUMN (Sidebar) -->
+            <aside class="sidebar">
+                
+                <!-- SKILLS -->
+                <section class="cv-card">
+                    <h3 class="card-title"><i class="fa-solid fa-laptop-code"></i> Competencias</h3>
+                    
+                    <div class="skill-group">
+                        <h4><i class="fa-solid fa-code"></i> Frontend & Backend</h4>
+                        <div class="badges-wrapper">
+                            <span class="skill-tag">JavaScript (ES6+)</span>
+                            <span class="skill-tag">HTML5 / CSS3</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">APIs REST/SOAP</span>
+                            <span class="skill-tag">Arquitectura MVC</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4><i class="fa-solid fa-heart-pulse"></i> Salud & Seguridad</h4>
+                        <div class="badges-wrapper">
+                            <span class="skill-tag">Sistemas HIS (Salud)</span>
+                            <span class="skill-tag">Interoperabilidad</span>
+                            <span class="skill-tag">ISO 27001 (SGSI)</span>
+                            <span class="skill-tag">Ciberseguridad</span>
+                            <span class="skill-tag">Microsoft SQL Server</span>
+                            <span class="skill-tag">BBDD Relacionales</span>
+                            <span class="skill-tag">Ley 25.326 Datos Médicos</span>
+                            <span class="skill-tag">Sistemas GIS (Aeroterra)</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4><i class="fa-solid fa-gears"></i> Gestión y Metodologías</h4>
+                        <div class="badges-wrapper">
+                            <span class="skill-tag">Liderazgo de Equipos</span>
+                            <span class="skill-tag">Metodologías Ágiles</span>
+                            <span class="skill-tag">SCRUM</span>
+                            <span class="skill-tag">Git / Version Control</span>
+                            <span class="skill-tag">Gestión de Proyectos</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LANGUAGES -->
+                <section class="cv-card">
+                    <h3 class="card-title"><i class="fa-solid fa-language"></i> Idiomas</h3>
+                    <div class="language-list">
+                        <div class="language-item">
+                            <div class="lang-meta">
+                                <span>Español</span>
+                                <span class="lang-level">Nativo</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" data-progress="100%"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="lang-meta">
+                                <span>Inglés</span>
+                                <span class="lang-level">Técnico Avanzado</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" data-progress="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CERTIFICATIONS (Moved to Sidebar to balance visual heights) -->
+                <section class="cv-card">
+                    <h3 class="card-title"><i class="fa-solid fa-certificate"></i> Certificaciones</h3>
+                    <div class="certs-list">
+                        <div class="cert-item">
+                            <i class="fa-brands fa-python"></i>
+                            <div class="cert-details">
+                                <h5>Programación con Python</h5>
+                                <p>Certificación Oficial (8 hs)</p>
+                                <span class="date">Abril 2026</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fa-solid fa-hospital"></i>
+                            <div class="cert-details">
+                                <h5>Sistemas Hospitalarios (Nivel 1 al 4)</h5>
+                                <p>Hospital Italiano de Buenos Aires</p>
+                                <span class="date">2021 - 2025</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div class="cert-details">
+                                <h5>Seguridad de Información ISO 27001</h5>
+                                <p>UTN - FRBA (45 hs, ID: CER-XLEPHYJ2-207830)</p>
+                                <span class="date">2017</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <div class="cert-details">
+                                <h5>Especialización en Ciberseguridad</h5>
+                                <p>Universidad Tecnológica Nacional (UTN)</p>
+                                <span class="date">2017</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <div class="cert-details">
+                                <h5>Sistemas de Información Geográfica (GIS)</h5>
+                                <p>Centro de Capacitación Aeroterra (Esri)</p>
+                                <span class="date">2016</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fa-solid fa-database"></i>
+                            <div class="cert-details">
+                                <h5>Administración SQL Server 2012</h5>
+                                <p>Capacitación Técnica Especializada</p>
+                                <span class="date">2012</span>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fa-solid fa-globe"></i>
+                            <div class="cert-details">
+                                <h5>Especialización Programación Web</h5>
+                                <p>Instituto Argentino de Computación (IAC)</p>
+                                <span class="date">2011</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </aside>
+
+            <!-- RIGHT COLUMN (Main Pane) -->
+            <main class="main-pane">
+                
+                <!-- PROFILE SUMMARY -->
+                <section class="cv-card">
+                    <h3 class="card-title"><i class="fa-solid fa-circle-info"></i> Perfil Profesional</h3>
+                    <p class="profile-summary-text">
+                        Licenciado en Informática con más de 15 años de trayectoria en el diseño, desarrollo e implementación de sistemas de información complejos, con especialidad en el sector de salud pública, emergencias y seguridad. 
+                    </p>
+                    <p class="profile-summary-text">
+                        He liderado equipos de desarrollo en la construcción de aplicaciones web escalables y en la administración de infraestructuras críticas de bases de datos bajo SQL Server. Cuento con una sólida experiencia integrando <strong>sistemas hospitalarios (HIS) de alta complejidad homologados bajo los estándares del Hospital Italiano</strong>, administrando la seguridad de los datos según normativas ISO 27001 y desarrollando capas web seguras orientadas a la optimización de procesos y a la protección de datos médicos sensibles.
+                    </p>
+                    <p class="profile-summary-text">
+                        Mi sólida base militar como Oficial de Comunicaciones me ha dotado de destrezas de liderazgo bajo presión, estructuración eficiente de proyectos, adaptabilidad, ética profesional y compromiso inquebrantable para lograr objetivos institucionales y empresariales.
+                    </p>
+
+                    <!-- Why Medicus Highlights -->
+                    <div class="fit-grid">
+                        <div class="fit-box">
+                            <i class="fa-solid fa-hospital-user"></i>
+                            <h4>Interoperabilidad en Salud</h4>
+                            <p>Certificaciones en Sistemas Hospitalarios del Hospital Italiano de Buenos Aires.</p>
+                        </div>
+                        <div class="fit-box">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <h4>Seguridad de Datos</h4>
+                            <p>Gestión de riesgos ISO 27001 para la privacidad absoluta de historias clínicas.</p>
+                        </div>
+                        <div class="fit-box">
+                            <i class="fa-solid fa-people-roof"></i>
+                            <h4>Liderazgo de Equipos</h4>
+                            <p>Conducción y motivación de equipos técnicos en proyectos críticos de alta exigencia.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WORK EXPERIENCE -->
+                <section class="cv-card">
+                    <h3 class="card-title"><i class="fa-solid fa-briefcase"></i> Trayectoria Profesional</h3>
+                    <div class="timeline">
+                        
+                        <!-- JOB 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <h4 class="job-role">Líder de Sistemas de Información e Infraestructura de Software</h4>
+                                    <span class="job-company">Gendarmería Nacional Argentina - Centro Asistencial "Buenos Aires"</span>
+                                </div>
+                                <span class="job-date">2022 - Presente</span>
+                            </div>
+                            <p class="job-summary">Coordinación del departamento tecnológico del Centro Asistencial, administrando la infraestructura y el desarrollo de sistemas médicos sanitarios.</p>
+                            <ul class="job-bullets">
+                                <li>Liderazgo en desarrollo e implementación del portal web y aplicaciones sanitarias internas, disminuyendo en un 30% los tiempos administrativos de asignación de turnos.</li>
+                                <li>Gestión de la interoperabilidad sanitaria certificando y homologando sistemas de información bajo lineamientos del <strong>Hospital Italiano de Buenos Aires (2023 - 2025)</strong>.</li>
+                                <li>Despliegue del Sistema de Gestión de Seguridad de la Información (SGSI) bajo norma <strong>ISO/IEC 27001</strong> para blindar el acceso a historias clínicas según Ley 25.326.</li>
+                                <li>Integración y desarrollo de módulos geográficos (GIS) con tecnología <strong>Aeroterra/Esri</strong> para logística sanitaria y respuesta ante emergencias.</li>
+                            </ul>
+                        </div>
+
+                        <!-- JOB 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <h4 class="job-role">Líder Técnico de Desarrollo Web / Analista de Sistemas</h4>
+                                    <span class="job-company">Gendarmería Nacional Argentina - Dirección de Informática (DIRTICOM)</span>
+                                </div>
+                                <span class="job-date">2015 - 2022</span>
+                            </div>
+                            <p class="job-summary">Líder de desarrollo frontend/backend y administrador de servidores de bases de datos relacionales institucionales.</p>
+                            <ul class="job-bullets">
+                                <li>Administración técnica y diseño de bases de datos críticas estructuradas bajo <strong>Microsoft SQL Server 2012</strong>, garantizando alta disponibilidad.</li>
+                                <li>Programación full-stack de portales internos y servicios interactivos seguros con JavaScript (ES6+), Python, Node.js y APIs REST.</li>
+                                <li>Supervisión de metodologías de código seguro y auditorías de seguridad en sistemas web institucionales.</li>
+                                <li>Integración de sistemas y desarrollo del soporte de base de datos durante el Congreso Odontológico Institucional (2019).</li>
+                            </ul>
+                        </div>
+
+                        <!-- JOB 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <div>
+                                    <h4 class="job-role">Desarrollador Web / Analista Programador</h4>
+                                    <span class="job-company">Gendarmería Nacional Argentina - Dirección de Comunicaciones (DIRTICOM)</span>
+                                </div>
+                                <span class="job-date">2009 - 2015</span>
+                            </div>
+                            <p class="job-summary">Análisis de requerimientos, codificación y mantenimiento preventivo de portales e intranet de la fuerza.</p>
+                            <ul class="job-bullets">
+                                <li>Codificación y mantenimiento de aplicaciones web internas con tecnologías HTML, CSS, JavaScript y PHP.</li>
+                                <li>Desarrollo de stored procedures complejos y optimización de índices SQL Server para la generación acelerada de reportes estadísticos.</li>
+                                <li>Miembro del equipo de soporte informático de comunicaciones en el Congreso de Comunicaciones e Informática (2010).</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- EDUCATION -->
+                <section class="cv-card">
+                    <h3 class="card-title"><i class="fa-solid fa-graduation-cap"></i> Formación Académica</h3>
+                    <div class="edu-list">
+                        
+                        <div class="edu-item">
+                            <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <div class="edu-details">
+                                <h4>Licenciatura en Informática</h4>
+                                <p class="edu-school">Universidad Blas Pascal (UBP)</p>
+                                <span class="edu-meta">Título de Grado Universitario | Finalizado en 2014</span>
+                            </div>
+                        </div>
+
+                        <div class="edu-item">
+                            <div class="edu-icon"><i class="fa-solid fa-award"></i></div>
+                            <div class="edu-details">
+                                <h4>Analista de Sistemas de Computación</h4>
+                                <p class="edu-school">Instituto Universitario de Gendarmería Nacional</p>
+                                <span class="edu-meta">Título Universitario de Pregrado | Finalizado en 2009</span>
+                            </div>
+                        </div>
+
+                        <div class="edu-item">
+                            <div class="edu-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <div class="edu-details">
+                                <h4>Analista Programador</h4>
+                                <p class="edu-school">Instituto Universitario de Gendarmería Nacional</p>
+                                <span class="edu-meta">Título Técnico Universitario Superior | Finalizado en 2009</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+
+        <!-- FOOTER (Hidden on Print) -->
+        <footer class="cv-footer">
+            <p>Curriculum Vitae Profesional de Leonardo Andrés Lucero. Optimizado para visualización continua e impresión digital.</p>
+            <p>© 2026 - CABA, Argentina.</p>
+        </footer>
+
+    </div>
+
+    <!-- FLOATING CONTROLS -->
+    <div class="controls-bar">
+        <button class="floating-btn" id="printBtn" title="Guardar como PDF / Imprimir">
+            <i class="fa-solid fa-print"></i>
+        </button>
+        <button class="floating-btn secondary" id="themeToggle" title="Cambiar Tema (Claro/Oscuro)">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY & ANIMATION -->
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Check for stored preferences
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+            themeIcon.className = 'fa-solid fa-sun';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Print Handler
+        document.getElementById('printBtn').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Dismiss Top Tip
+        function dismissTip() {
+            const tip = document.getElementById('printTip');
+            tip.style.transition = 'opacity 0.3s ease, margin-bottom 0.3s ease';
+            tip.style.opacity = '0';
+            setTimeout(() => {
+                tip.style.display = 'none';
+            }, 300);
+        }
+
+        // Animate Language Progress Bars when viewport loads
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const progressFills = document.querySelectorAll('.progress-bar-fill');
+                progressFills.forEach(fill => {
+                    const progressValue = fill.getAttribute('data-progress');
+                    fill.style.width = progressValue;
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
